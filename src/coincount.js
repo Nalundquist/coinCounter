@@ -31,48 +31,6 @@ export const coinCounter = (amount, quarters, dimes, nickels, pennies, converted
   }
 }
 
-const coinCountClose = (coin) => {
-	return (amount => {
-		const coinTotal = (amount - (amount % coin)) / coin;
-		return coinTotal;
-	})
-}
-
-const quarterCount = coinCountClose(.25);
-const dimeCount = coinCountClose(.10);
-const nickelCount = coinCountClose(.05);
-const pennyCount = coinCountClose(.01);
-
-// quarterCount(3.41);
-// theoretical output [.41, 12];
-
-
-
-export const lotsOMath = (amount) => {
-  return function() {
-    console.log("hello")
-    const quarters = quarterCount(amount)
-    amount = (amount % .25)
-    // determine quarters
-    return function() {
-      const dimes = dimeCount(amount)
-      amount = (amount % .1)
-      // determine dimes
-      return function() {
-        const nickels = nickelCount(amount)
-        amount = (amount % .05)
-        // determine nickels
-        return function (){
-          const pennies = pennyCount(amount)
-          //amount = (amount % .01)
-          // determine pennies
-          return "Quarters: " + quarters + ", Dimes: " + dimes + ", Nickels: " + nickels + ", Pennies: " + pennies 
-        }
-      }
-    }
-  }
-}
-
 
 
 

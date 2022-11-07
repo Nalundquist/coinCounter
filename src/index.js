@@ -1,5 +1,5 @@
 import {coinCounter} from "./coincount.js"
-import {lotsOMath} from "./coincount.js"
+import {lotsOMath} from "./lotsofmath.js"
 
 
 coinCounter(3.41)
